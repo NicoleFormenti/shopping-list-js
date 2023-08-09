@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List</title>
+</head>
+<body>
+    <h2>Things I need to buy</h2>
+    <ul class="shopping_list">
+        
+        <li>dog treats</li>
+        <li>bananas</li>
+        <li>sliced bread</li>
+        <li>shower gel</li>
+        <li>toilet paper</li>
+
+    </ul>
+    <input id="add_item" type="text"/>
+    <button>Add your item</button>
+
+    <script>
+        //declaring variables
+        let input = document.getElementsByTagName("input").item(0);          // gEBTN returns a NodeList but the lenght is 0 
+        const button = document.getElementsByTagName("button").item(0);     
+        let ul = document.getElementsByTagName("ul").item(0);           
+        // to do: create a new li with an input value for the new item, add li to the previous list
+        button.addEventListener("click", function(){
+            let li = document.createElement("li"); // creating a new li
+            li.textContent = input.value; // adding a "text" to li
+            ul.appendChild(li); // the new li needs to be appended to the parent - ul
+        })
+    </script>
+
+</body>
+</html>
